@@ -1,4 +1,4 @@
-class StringInstrument():
+class StringInstrument:
     def __init__(self):
         self.str_number = None
         self.fret_number = None
@@ -45,6 +45,10 @@ class SopranoUkulele(StringInstrument):
         self.str_number = 4
         self.tuning = {1: 'A', 2: 'E', 3: 'C', 4: 'G'}
 
+    def __str__(self):
+        tuning = ''.join(self.tuning[each] for each in self.tuning)
+        return 'soprano ukulele with tuning:' + tuning[::-1]
+
 
 class Guitar(StringInstrument):
     def __init__(self):
@@ -52,3 +56,7 @@ class Guitar(StringInstrument):
         self.fret_number = 24
         self.str_number = 6
         self.tuning = {1: 'E', 2: 'H', 3: 'G', 4: 'D', 5: 'A', 6: 'E'}
+
+    def __str__(self):
+        tuning = ''.join(self.tuning[each] for each in self.tuning)
+        return 'guitar with tuning:' + tuning[::-1]
